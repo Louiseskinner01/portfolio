@@ -787,8 +787,10 @@
         </div>
       </div>
       <div class="fade-in">
-        <form class="contact-form" onsubmit="handleSubmit(event)">
-          <div class="form-group">
+        <form class="contact-form" action="https://formspree.io/f/xxxxxxxx" method="POST">
+            <input type="hidden" name="_next" value="https://louiseskinner01.github.io/portfolio/">
+            
+            <div class="form-group">               
             <label>Your Name</label>
             <input type="text" placeholder="Jane Smith" required>
           </div>
@@ -841,19 +843,6 @@
     }, { threshold: 0.1 });
 
     fadeEls.forEach(el => observer.observe(el));
-
-    // Contact form handler
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('button');
-      btn.textContent = 'Message Sent! ✓';
-      btn.style.background = '#7dd4bc';
-      setTimeout(() => {
-        btn.textContent = 'Send Message →';
-        btn.style.background = '';
-        e.target.reset();
-      }, 3000);
-    }
   </script>
 
 </body>
